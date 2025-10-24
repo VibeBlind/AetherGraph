@@ -1,11 +1,12 @@
-AetherGraph is a visual annotation platform for mapping the inheritance of ideas. It lets you connect texts, trace influence, and illuminate the invisible structures of meaning, not just with hyperlinks, but with intentional, annotated, liminal nodes. Think of it as your second library, where every margin note, every thread of thought, becomes part of a shared web of understanding.
+# AetherGraph
+is a visual annotation platform for mapping the inheritance of ideas. It lets you connect texts, trace influence, and illuminate the invisible structures of meaning, not just with hyperlinks, but with intentional, annotated, liminal nodes. Think of it as your second library, where every margin note, every thread of thought, becomes part of a shared web of understanding.
 
-# How AetherGraph Is Different From a Simple Node Graph
+## How AetherGraph Is Different From a Simple Node Graph
 ### 1. Edges Are Treated as First-Class Citizens
 
 **In a standard graph:**
 - Nodes are objects (people, ideas, texts)
-- Edges are simple metadata (e.g., “influenced by”)
+- Edges are simple metadata (e.g. “influenced by”)
 
 **In AetherGraph:**
 - Edges are liminal nodes, they can:
@@ -16,17 +17,17 @@ AetherGraph is a visual annotation platform for mapping the inheritance of ideas
 - This allows a connection like "Nietzsche was influenced by Heraclitus" to contain:
   - The actual text where Nietzsche says it
   - A user comment analyzing the link
-  - AI-suggested related themes
+  - See human-suggested vs AI-suggested related themes
 
 Think of it like this:
 
        [Heraclitus]
             ||
-       (Nietzsche cites him in _Twilight of the Idols_)
+       (Nietzsche cites him in Twilight of the Idols)
             ||
        [Nietzsche]
 
-That middle layer, the liminal connective tissue, is where AetherGraph lives. The middle tissue usually contains multitudes of articles and discussions on what's implied between the lines. AetherGraph attempts to allow you to show the implication like Kamizsa shows the edges of his triangle.
+That middle layer, the liminal connective tissue, is where AetherGraph lives. The middle tissue usually contains multitudes of articles and discussions on what's implied between the lines. AetherGraph aims to let you show implications, like Kamizsa shows the edges of his triangle.
 
 ### 2. Annotation-Driven Graph Construction
 - Instead of predefining all relationships in a graph database, you build the graph by reading and annotating.
@@ -40,14 +41,13 @@ That middle layer, the liminal connective tissue, is where AetherGraph lives. Th
 - Most graph tools don’t support:
   - Custom commentary on edges
   - Inline citation or paragraph-level connection
-  - Filtering by lens (e.g. “show me only ethics-related links” or “only Dave’s comments”)
 
 ### 4. Perceptual Design Philosophy
 - Inspired by Kanizsa illusions and Gestalt psychology, not just force-directed graphs.
 - Your attention completes the meaning — some links only appear in certain modes or when “called.”
 - It invites a more phenomenological or hermeneutic reading of maps — not just a data structure.
 
-### So Why Not Just Use _Obsidian_ or _Kumu_?
+## So Why Not Just Use _Obsidian_ or _Kumu_?
 Because:
 - They don’t let you treat edges as sites of knowledge
 - They don’t support semantic citation structures
