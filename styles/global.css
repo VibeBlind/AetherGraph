@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-background text-textLight font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif tracking-tight;
+  }
+
+  p {
+    @apply font-sans;
+  }
+
+  .golden-glow {
+    @apply drop-shadow-md;
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.3);
+  }
+}
