@@ -1,0 +1,29 @@
+# Node modules
+node_modules/
+
+# Output of builds
+.next/
+out/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Env files
+.env*
+!.env.example
+
+# Editor-specific
+.vscode/
+.idea/
+
+# OS-specific
+*.swp
+*~
+
+# Tailwind's cache
+.tailwindcache/
+
+# Misc
+*.log
+*.tgz
