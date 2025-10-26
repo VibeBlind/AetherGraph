@@ -1,0 +1,61 @@
+{
+  "nodes": [
+    {
+      "id": "socrates",
+      "label": "Socrates",
+      "type": "thinker",
+      "summary": "Classical Greek philosopher credited as one of the founders of Western philosophy."
+    },
+    {
+      "id": "plato",
+      "label": "Plato",
+      "type": "thinker",
+      "summary": "Student of Socrates and teacher of Aristotle; founded the Academy in Athens."
+    },
+    {
+      "id": "aristotle",
+      "label": "Aristotle",
+      "type": "thinker",
+      "summary": "Student of Plato; wrote extensively on logic, metaphysics, and ethics."
+    },
+    {
+      "id": "nietzsche",
+      "label": "Nietzsche",
+      "type": "thinker",
+      "summary": "19th-century philosopher known for critiques of religion and morality."
+    },
+    {
+      "id": "kant",
+      "label": "Immanuel Kant",
+      "type": "thinker",
+      "summary": "Central figure in modern philosophy; formulated the categorical imperative."
+    }
+  ],
+  "links": [
+    {
+      "source": "socrates",
+      "target": "plato",
+      "relation": "taught"
+    },
+    {
+      "source": "plato",
+      "target": "aristotle",
+      "relation": "taught"
+    },
+    {
+      "source": "aristotle",
+      "target": "kant",
+      "relation": "influenced"
+    },
+    {
+      "source": "kant",
+      "target": "nietzsche",
+      "relation": "reacted-to"
+    },
+    {
+      "source": "plato",
+      "target": "nietzsche",
+      "relation": "critiqued"
+    }
+  ]
+}

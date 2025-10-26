@@ -4,7 +4,7 @@ export default function Home() {
       {/* Background Layer (z-0) */}
       <div className="absolute inset-0 z-0">
         <div
-          className="w-full h-full bg-black bg-cover bg-center bg-no-repeat blur-sm brightness-50"
+          className="w-full h-full bg-black bg-cover bg-center bg-no-repeat brightness-50"
           style={{
             //backgroundImage: "url('https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?auto=format&fit=crop&w=1600&q=80')"
             backgroundImage: "url('/athena.jpg')"
@@ -21,10 +21,10 @@ export default function Home() {
           <span className="text-yellow-500 golden-glow" >AETHER GRAPH</span>
         </h1>
         <p className="text-xl italic text-white/80">
-          A living constellation of thought.
+          A living constellation of thought
         </p>
         <p className="text-md text-white/60">
-          Visualize the genealogy of ideas. Annotate connections. Explore the web of meaning.
+          "I was having a hard time expressing my thoughts with words, so I'm going to make an tool to express the liminal space between concepts. It's difficult when people can't see the mosaic of little details and how they relate to the gestalt whole." - Seth George
         </p>
         <a
           href="https://github.com/VibeBlind/AetherGraph"
