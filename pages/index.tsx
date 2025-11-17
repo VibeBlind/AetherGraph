@@ -13,10 +13,10 @@ export default function Home() {
       </div>
 
       {/* Overlay Layer (z-10) */}
-      <div className="absolute inset-0 bg-black z-10 opacity-80" />
+      <div className="absolute inset-0 bg-black z-10 opacity-50" />
 
       {/* Foreground Content (z-20) */}
-      <div className="relative z-20 text-center px-4 max-w-4xl space-y-8">
+      <div className="relative z-20 text-center px-4 max-w-6xl space-y-8">
         <h1 className="text-8xl font-serif font-bold tracking-tight">
           <span className="text-yellow-500 golden-glow" >AETHER GRAPH</span>
         </h1>
@@ -24,14 +24,24 @@ export default function Home() {
           A living constellation of thought
         </p>
         <p className="text-md text-white/60">
-          "I was having a hard time expressing my thoughts with words, so I'm going to make an tool to express the liminal space between concepts. It's difficult when people can't see the mosaic of little details and how they relate to the gestalt whole." - Seth George
+          "I was having a hard time expressing my thoughts with words, so I'm going to make an tool to express the liminal space between concepts.
+          <br/> It's difficult when people can't see the mosaic of little details and how they relate to the gestalt whole."
+          <br/> - Seth
         </p>
-        <a
-          href="https://github.com/VibeBlind/AetherGraph"
-          className="inline-block px-6 py-3 mt-6 bg-yellow-500 hover:bg-yellow-600 golden-glow text-black font-semibold rounded-lg shadow transition"
-        >
-          Coming Soon
-        </a>
+        <div className="flex justify-center gap-4 mt-6">
+          <a
+            href="https://github.com/VibeBlind/AetherGraph"
+            className="inline-block px-6 py-3 bg-yellow-500 hover:bg-yellow-600 golden-glow text-black font-semibold rounded-lg shadow transition"
+          >
+            GitHub
+          </a>
+          <a
+            href="../graph"
+            className="inline-block px-6 py-3 bg-yellow-500 hover:bg-yellow-600 golden-glow text-black font-semibold rounded-lg shadow transition"
+          >
+            Graph
+          </a>
+        </div>
       </div>
     </main>
   );
