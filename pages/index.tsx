@@ -41,6 +41,12 @@ export default function Home() {
           >
             Graph
           </a>
+          <a
+            href="../canvas"
+            className="inline-block px-6 py-3 bg-yellow-500 hover:bg-yellow-600 golden-glow text-black font-semibold rounded-lg shadow transition"
+          >
+            Canvas
+          </a>
         </div>
       </div>
     </main>

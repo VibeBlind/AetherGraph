@@ -1,3 +1,4 @@
+// components/AetherGraph2D.tsx
 import React, {
   useCallback,
   useEffect,
@@ -15,6 +16,7 @@ const ForceGraph2D = dynamic(() => import('react-force-graph-2d'), {
 interface AetherGraph2DProps {
   data: GraphData;
   onNodeClick?: (node: GraphNode) => void;
+  selectedNodeId?: string | number | null;
 }
 
 // metadata helpers
@@ -27,7 +29,11 @@ const getNodeLabel = (node: GraphNode): string =>
 const getNodeType = (node: GraphNode): string | undefined =>
   (node as any).type ?? (node as any).kind ?? undefined;
 
-export default function AetherGraph2D({ data, onNodeClick }: AetherGraph2DProps) {
+export default function AetherGraph2D({
+  data,
+  onNodeClick,
+  selectedNodeId,
+}: AetherGraph2DProps) {
   const fgRef = useRef<ForceGraphMethods | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
@@ -93,20 +99,30 @@ export default function AetherGraph2D({ data, onNodeClick }: AetherGraph2DProps)
           const label = getNodeLabel(node);
           const type = getNodeType(node);
 
+          const isSelected =
+            selectedNodeId != null &&
+            String(node.id) === String(selectedNodeId);
+
           const fontSize = 12 / globalScale;
-          const radius = 4 / globalScale;
+          const radius = (isSelected ? 6 : 4) / globalScale;
 
           // node body
           ctx.beginPath();
           ctx.arc(node.x!, node.y!, radius, 0, 2 * Math.PI, false);
-          ctx.fillStyle = 'white';
+          ctx.fillStyle = isSelected ? '#38bdf8' : 'white';
           ctx.fill();
+
+          if (isSelected) {
+            ctx.lineWidth = 1.5 / globalScale;
+            ctx.strokeStyle = '#0ea5e9';
+            ctx.stroke();
+          }
 
           // label
           ctx.font = `${fontSize}px 'EB Garamond', Garamond, serif`;
           ctx.textAlign = 'left';
           ctx.textBaseline = 'middle';
-          ctx.fillStyle = 'white';
+          ctx.fillStyle = isSelected ? '#e0f2fe' : 'white';
           ctx.fillText(label, node.x! + radius + 2, node.y!);
 
           // type tag
@@ -123,11 +139,13 @@ export default function AetherGraph2D({ data, onNodeClick }: AetherGraph2DProps)
             const tagX = node.x! + radius + 2;
             const tagY = node.y! + fontSize;
 
-            ctx.fillStyle = 'rgba(148, 163, 184, 0.4)';
+            ctx.fillStyle = isSelected
+              ? 'rgba(56, 189, 248, 0.25)'
+              : 'rgba(148, 163, 184, 0.4)';
             ctx.fillRect(tagX, tagY - tagHeight / 2, tagWidth, tagHeight);
 
             ctx.font = `${tagFontSize}px 'EB Garamond', Garamond, serif`;
-            ctx.fillStyle = 'white';
+            ctx.fillStyle = isSelected ? '#e0f2fe' : 'white';
             ctx.textBaseline = 'middle';
             ctx.fillText(typeText, tagX + padX, tagY);
           }

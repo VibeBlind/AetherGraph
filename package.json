@@ -22,7 +22,8 @@
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-force-graph": "^1.48.1",
-    "react-force-graph-2d": "^1.29.0"
+    "react-force-graph-2d": "^1.29.0",
+    "reactflow": "^11.11.4"
   },
   "devDependencies": {
     "@types/node": "^24.9.1",
