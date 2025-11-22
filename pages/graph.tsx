@@ -1,7 +1,7 @@
 // pages/graph.tsx
 import { useState } from 'react';
 import AetherGraph2D from '../components/AetherGraph2D';
-import NodeCard from '../components/NodeCard';
+import NodeInspector from '../components/NodeInspector';
 import type { GraphData, GraphNode } from '../types/graph';
 import philoseed from '../data/philoseed.json';
 
@@ -28,7 +28,7 @@ export default function GraphPage() {
 
         {/* side card */}
         <aside className="w-80 border-l border-slate-900 bg-slate-950/90">
-          <NodeCard node={selectedNode} />
+          <NodeInspector node={selectedNode} />
         </aside>
       </div>
     </div>

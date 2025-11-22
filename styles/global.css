@@ -25,3 +25,81 @@
     text-shadow: 0 0 8px rgba(255, 215, 0, 0.3);
   }
 }
+
+/* handles */
+/* base handle style */
+.react-flow__handle.aether-handle {
+  width: 10px;
+  height: 10px;
+  min-width: 10px;
+  min-height: 10px;
+  background: #020617;        /* near-black */
+  border: 1px solid #64748b;  /* slate */
+  border-radius: 9999px;
+  pointer-events: all;
+  cursor: crosshair;
+}
+
+/* hover halo */
+.react-flow__handle.aether-handle::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 9999px;
+  background: rgba(56, 189, 248, 0.25);
+  opacity: 0;
+  transform: scale(0.8);
+  transition:
+    opacity 120ms ease-out,
+    transform 120ms ease-out;
+}
+
+/* plus sign */
+.react-flow__handle.aether-handle::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+  color: #e5e7eb;
+  opacity: 0;
+  transform: scale(1); /* base size */
+  transition:
+    opacity 120ms ease-out,
+    transform 120ms ease-out;
+}
+
+/* hover: show plus, double its scale, show halo */
+.react-flow__handle.aether-handle:hover::before {
+  content: '+';
+  opacity: 1;
+  transform: scale(1); /* 2x relative to 0.5 */
+}
+
+.react-flow__handle.aether-handle:hover::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* base edge style (force over React Flow defaults) */
+.react-flow__edge-path {
+  stroke: #64748b !important;        /* neutral slate */
+  stroke-width: 1.5px !important;
+  transition:
+    stroke 120ms ease-out,
+    stroke-width 120ms ease-out;
+}
+
+/* hover highlight */
+.react-flow__edge:hover .react-flow__edge-path {
+  stroke: #f97316 !important;        /* orange */
+  stroke-width: 2.25px !important;
+}
+
+/* selected edge: React Flow adds `.selected` on <g> when you click */
+.react-flow__edge.selected .react-flow__edge-path {
+  stroke: #22c55e !important;        /* green */
+  stroke-width: 2.25px !important;
+}
